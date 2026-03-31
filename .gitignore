@@ -1,0 +1,8 @@
+assets/
+generated/
+out/
+.vs/
+.idea/
+*.user
+*.suo
+*.tmp
