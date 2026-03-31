@@ -1,0 +1,11 @@
+# Auto-generated cvar configuration
+log_verbose = true
+video_mode_width = 2650
+video_mode_height = 1440
+user_language = 2
+d3d12_readback_resolve = true
+vsync = false
+gpu_allow_invalid_fetch_constants = true
+execute_unclipped_draw_vs_on_cpu = true
+anisotropic_override = 3
+resolution_scale = 2
