@@ -7,10 +7,10 @@ No copyrighted game files are included.
 
 ## Repository Layout
 
-- `assets/` local game files input directory, kept empty in Git except for a placeholder `.gitignore`
-- `generated/` local ReXGlue codegen output directory, kept empty in Git except for a placeholder `.gitignore`
+- `assets/` expected game executable input (`default.xex`)
+- `generated/` ReXGlue codegen output
 - `src/` custom runtime/hooks
-- `ACRE_config.toml` ReXGlue project config
+- `acfa_recomp_config.toml` ReXGlue project config
 - `CMakeLists.txt` / `CMakePresets.json` build config
 
 ## Prerequisites
@@ -18,33 +18,19 @@ No copyrighted game files are included.
 Windows:
 - PowerShell 5+ or PowerShell 7+
 - CMake, Ninja, LLVM/Clang
+- `extract-xiso` (for ISO extraction)
 - ReXGlue SDK (`rexglue.exe`)
 - Visual Studio Community edition
 
-## How To Build
-
-1. Install the ReXGlue SDK by following the official getting started guide:
-   https://github.com/rexglue/rexglue-sdk/wiki/Guide-%E2%80%90-Getting-Started
-2. Install Visual Studio Community with Desktop development with C++ and the Clang tools for Windows workload component.
-3. Clone this repository.
-4. Dump your legally owned Armored Core: For Answer game files and place the extracted contents, including `default.xex`, into `assets/`.
-5. Ensure `rexglue.exe` is available on your `PATH`.
-6. Run code generation:
-
-```powershell
-rexglue codegen .\ACRE_config.toml
-```
-
-7. Configure and build:
-
-```powershell
-cmake --preset win-amd64-relwithdebinfo
-cmake --build --preset win-amd64-relwithdebinfo --parallel
-```
-
-8. The build output will be written under `out/build/win-amd64-relwithdebinfo/`.
-
-## Notes
-
-- `assets/` and `generated/` are intentionally committed as empty directories with placeholder `.gitignore` files.
-- `out/` is local build output and is intentionally not tracked by Git.
+HOW TO BUILD
+-----------------------------------------------------------------------------------
+1. Install Rexglue-SDk following the <a href="https://github.com/rexglue/rexglue-sdk/wiki/Guide-%E2%80%90-Getting-Started">wiki</a>
+2. install Visual Studio Community edition and ensure you install the desktop development with C++ and make sure you check the box that says C++ clang compiler for windows (note: if you are using Mac or linux you can skip this for you will have to follow the wiki linked in step 1 to build the game)
+3. clone/download the repository
+4. dump your copy of Armored core for Answer and use a tool like ISO-Extract to dump the contents of the iso (INCLUDING THE DEFAULT.XEX FILE)
+5. place the contents of the iso in the assets folder(INCLUDING THE DEFAULT.XEX FILE)
+6. open the folder in visual studio, go into cmake targets view
+7. change the configuration to win-amd64-relwithdebinfo
+8. put rexglue.exe in your path environment variable and do ```rexglue codegen renut_config.toml``` in a terminal (visual studios works, or you can use windows default terminal/cmd/powershell)
+10. right click reNut project and select build all
+11. copy the assets folder with the dumped contents of the iso in out/build/win-amd64-relwithdebinfo
