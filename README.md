@@ -31,6 +31,6 @@ HOW TO BUILD
 5. place the contents of the iso in the assets folder(INCLUDING THE DEFAULT.XEX FILE)
 6. open the folder in visual studio, go into cmake targets view
 7. change the configuration to win-amd64-relwithdebinfo
-8. put rexglue.exe in your path environment variable and do ```rexglue codegen renut_config.toml``` in a terminal (visual studios works, or you can use windows default terminal/cmd/powershell)
+8. put rexglue.exe in your path environment variable and do ```rexglue codegen ACRE_config.toml``` in a terminal (visual studios works, or you can use windows default terminal/cmd/powershell)
 10. right click ACRE project and select build all
 11. copy the assets folder with the dumped contents of the iso in out/build/win-amd64-relwithdebinfo
