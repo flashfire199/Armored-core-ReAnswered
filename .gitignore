@@ -4,3 +4,11 @@
 *.user
 *.suo
 *.tmp
+*.bak
+
+CMakeCache.txt
+
+# Output directories
+generated/
+out/
+CMakeFiles/
