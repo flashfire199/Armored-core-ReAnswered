@@ -3,8 +3,8 @@
 //
 // This file is yours to edit. 'rexglue migrate' will NOT overwrite it.
 
-#include "generated/ACRE_config.h"
-#include "generated/ACRE_init.h"
+#include "generated/acre_config.h"
+#include "generated/acre_init.h"
 
 #include "acre_app.h"
 

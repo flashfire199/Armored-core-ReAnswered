@@ -1,4 +1,4 @@
-#include "generated/ACRE_init.h"
+#include "generated/acre_init.h"
 
 #include <Windows.h>
 
