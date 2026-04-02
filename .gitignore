@@ -9,6 +9,8 @@
 CMakeCache.txt
 
 # Output directories
-generated/
+generated/*
+!generated/rexglue.cmake
+
 out/
 CMakeFiles/
