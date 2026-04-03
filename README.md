@@ -39,17 +39,19 @@ Windows:
 
 ### Linux
 
-1. Install Rexglue-SDK following the <a href="https://github.com/rexglue/rexglue-sdk/wiki/Guide-%E2%80%90-Getting-Started">wiki</a>
-2. clone/download the repository
+1. Install Rexglue-SDK following the <a href="https://github.com/rexglue/rexglue-sdk/wiki/Guide-%E2%80%90-Getting-Started">wiki</a>. tl;dr:
+    - `git clone git@github.com:rexglue/rexglue-sdk.git`
+    - `cd rexglue-sdk`
+    - `git checkout VERSION`, only do this if you want to use a specific version (e.g. v0.7.1)
+    - `cmake --preset linux-amd64`
+    - `cmake --build --preset linux-amd64-relwithdebinfo --target install`
+2. clone/download this repository
 3. dump your copy of Armored core for Answer and use a tool like extract-xiso to dump the contents of the iso (INCLUDING THE DEFAULT.XEX FILE)
 4. place the contents of the iso in the assets folder(INCLUDING THE DEFAULT.XEX FILE)
 5. Within this repository, do the following to build:
-    - `rexglue migrate --app_root .`
-    - `rexglue codegen acre_config.toml`
-    - `cmake --preset linux-amd64-relwithdebinfo -D REXSDK_DIR:PATH=/PATH/TO/rexglue-sdk`
+    - `cmake --preset linux-amd64-relwithdebinfo`
+        - If you've built rexglue-sdk with a specific version (see above), add ` -D REXSDK_VERSION:STRING=VERSION` and replace VERSION with your version number (e.g. 0.7.1)
     - `cmake --build --preset linux-amd64-relwithdebinfo --target acre_codegen`
     - `cmake --build --preset linux-amd64-relwithdebinfo`
-    - `ln -s assets out/build/linux-amd64-relwithdebinfo/assets`
-    - `cp configs/acre.toml out/build/linux-amd64-relwithdebinfo/`
 6. Run the game: `./out/build/linux-amd64-relwithdebinfo/acre`
 
