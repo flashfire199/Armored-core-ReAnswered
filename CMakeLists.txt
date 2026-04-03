@@ -31,3 +31,7 @@ else()
 endif()
 
 rexglue_setup_target(acre)
+
+# Symlink assets and copy game configuration file
+file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR}/assets ${CMAKE_CURRENT_BINARY_DIR}/assets COPY_ON_ERROR SYMBOLIC)
+file(COPY config/acre.toml DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
