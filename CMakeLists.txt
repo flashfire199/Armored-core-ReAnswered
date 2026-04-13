@@ -34,4 +34,10 @@ rexglue_setup_target(acre)
 
 # Symlink assets and copy game configuration file
 file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR}/assets ${CMAKE_CURRENT_BINARY_DIR}/assets COPY_ON_ERROR SYMBOLIC)
-file(COPY config/acre.toml DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/acre.toml)
+    message(STATUS "Existing acre.toml found in '${CMAKE_CURRENT_BINARY_DIR}'. Not copying.")
+else()
+    message(STATUS "Copying config/acre.toml to '${CMAKE_CURRENT_BINARY_DIR}'...")
+    file(COPY config/acre.toml DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+endif()
